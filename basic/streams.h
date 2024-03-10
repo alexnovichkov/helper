@@ -77,6 +77,8 @@ while (true) {
     std::cin >> y;
     if (y < 0 || y > 10)
         std::cout << "The number you input is invalid. Try again";
+    else 
+    break;
 }
 
 //2. Считывание из буфера успешно, но пользователь ввел лишнее.
@@ -90,11 +92,14 @@ int y;
 while (true) {
     std::cout << "Enter the integer number in the range [0..10]";
     std::cin >> y;
-    if (y < 0 || y > 10)
+    if (y < 0 || y > 10) {
         std::cout << "The number you input is invalid. Try again";
+        continue;
+    }
     std::cin.ignore(100, '\n');
+    break;
 }
-//Последняя строка считывает из буфера не более 100 символов (или пока не 
+//ignore считывает из буфера не более 100 символов (или пока не 
 //встретится перенос строки) и отбрасывает их, не помещая ни в какие переменные.
 //Если неизвестно, сколько символов может ввести пользователь, то можно использовать
 //такую длинную конструкцию:
